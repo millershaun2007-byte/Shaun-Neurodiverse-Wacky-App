@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const volumeSlider = document.getElementById('sound-volume');
     const volumeDisplay = document.getElementById('volume-display');
 
-    // Create audio context for sound generation (simple tones)
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    // Create audio context lazily when first needed (to comply with browser autoplay policies)
+    let audioContext = null;
 
     soundButtons.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -188,6 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function playSound(soundType) {
         stopAllSounds();
+        
+        // Create audio context lazily on first use
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
         
         // For demo purposes, we'll generate simple tones
         // In production, you'd use actual sound files
@@ -221,13 +226,18 @@ document.addEventListener('DOMContentLoaded', function() {
         oscillator.start();
         currentAudio = { oscillator: oscillator, gainNode: gainNode, volume: volume / 100 };
         
-        // Show feedback
-        alert('🎵 Playing ' + soundType + ' sound. Click "Stop Sound" when done.\n\nNote: For full experience, add actual sound files in production!');
+        // Show non-blocking feedback via console (alert removed for better UX)
+        console.log('🎵 Playing ' + soundType + ' sound (demo mode - using generated tones)');
     }
 
     function stopAllSounds() {
         if (currentAudio && currentAudio.oscillator) {
-            currentAudio.oscillator.stop();
+            try {
+                currentAudio.oscillator.stop();
+            } catch (e) {
+                // Oscillator may already be stopped
+                console.log('Oscillator already stopped');
+            }
             currentAudio = null;
         }
     }
@@ -300,45 +310,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Add CSS animation for fade in
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .calm-btn {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .calm-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .calm-btn:active {
-            transform: translateY(-1px);
-        }
-        
-        /* Reduce motion support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    `;
-    document.head.appendChild(style);
 });

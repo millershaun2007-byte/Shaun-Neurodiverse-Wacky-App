@@ -749,3 +749,38 @@ footer {
         animation: none !important;
     }
 }
+
+/* Calm Corner Button Styles (from sensory-zone.js, moved to CSS) */
+.calm-btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.calm-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.calm-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Fade In Animation (used in sensory zone) */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
