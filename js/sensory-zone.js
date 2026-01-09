@@ -135,12 +135,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentAnimation = null;
     let animationElements = [];
+    let bubbleTimeouts = [];
 
     function clearAnimation() {
         if (currentAnimation) {
             cancelAnimationFrame(currentAnimation);
+            if (typeof currentAnimation === 'number' && currentAnimation > 0) {
+                clearInterval(currentAnimation);
+            }
             currentAnimation = null;
         }
+        
+        // Clear all bubble cleanup timeouts
+        bubbleTimeouts.forEach(timeout => clearTimeout(timeout));
+        bubbleTimeouts = [];
         
         animationElements.forEach(el => {
             if (el && el.parentNode) {
@@ -176,11 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
             animationCanvas.appendChild(bubble);
             animationElements.push(bubble);
             
-            setTimeout(() => {
+            const cleanupTimeout = setTimeout(() => {
                 if (bubble.parentNode) {
                     bubble.parentNode.removeChild(bubble);
                 }
             }, 10000);
+            bubbleTimeouts.push(cleanupTimeout);
         }
         
         // Add CSS animation if not already present
@@ -295,11 +304,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function showNewMindfulnessPrompt() {
         if (!mindfulnessText) return;
         
-        currentPromptIndex = Math.floor(Math.random() * mindfulnessPrompts.length);
+        // Prevent immediate repetition by selecting a different prompt
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * mindfulnessPrompts.length);
+        } while (newIndex === currentPromptIndex && mindfulnessPrompts.length > 1);
+        
+        currentPromptIndex = newIndex;
         mindfulnessText.textContent = mindfulnessPrompts[currentPromptIndex];
-        mindfulnessText.style.animation = 'none';
+        
+        // Simple fade-in using opacity
+        mindfulnessText.style.opacity = '0';
         setTimeout(() => {
-            mindfulnessText.style.animation = 'fadeIn 1s ease-in';
+            mindfulnessText.style.opacity = '1';
+            mindfulnessText.style.transition = 'opacity 1s ease-in';
         }, 10);
     }
 
