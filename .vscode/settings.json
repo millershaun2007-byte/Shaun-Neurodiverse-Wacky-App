@@ -1,0 +1,11 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "",
+        "Git Add.",
+        "Git Commit",
+        "Git Push."
+    ]
+   
+    
+
+}

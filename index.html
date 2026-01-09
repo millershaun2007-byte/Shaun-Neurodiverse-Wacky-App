@@ -108,97 +108,23 @@
                             <div id="feedbackThanks" style="display:none; color:#388e3c; font-weight:bold; margin-top:10px;">Thank you for your feedback!</div>
                         </div>
                         <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            var form = document.getElementById('feedbackForm');
-                            var thanks = document.getElementById('feedbackThanks');
-                            if(form && thanks) {
-                                form.onsubmit = function(e) {
-                                    e.preventDefault();
-                                    form.style.display = 'none';
-                                    thanks.style.display = 'block';
-                                };
-                            }
-                        });
-                        </script>
-            <h2>Welcome to the Kids Groovy Hip Hop Happening Unicorn App!</h2>
-            <p>Explore fun activities in math, reading, writing, art, and more. Designed for all kids, especially neurodivergent learners!</p>
-            
-            <!-- Meet the Creator Featured Card -->
-            <div style="margin: 32px auto; background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #9370DB 100%); border-radius: 20px; padding: 30px; max-width: 600px; box-shadow: 0 8px 24px rgba(147,112,219,0.3); text-align: center;">
-                <h3 style="color: #fff; font-size: 1.6em; margin-bottom: 20px;">💜 Meet Shaun - Your App Creator! 🦄</h3>
-                <img src="Shaun Image for App.png" alt="Shaun - Creator" style="width: 180px; height: 180px; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.2); margin-bottom: 20px; object-fit: cover;">
-                <p style="color: #fff; font-size: 1.15em; line-height: 1.6; margin-bottom: 20px;">
-                    Hi! I'm Shaun, and I created this magical learning app with love for all children, especially those who learn differently. My mission is to make education fun, inclusive, and accessible for every kid! 🎨✨
-                </p>
-                <button onclick="document.querySelector('.nav-btn[data-section=aboutMe]').click()" style="background: #fff; color: #764ba2; border: none; padding: 14px 32px; border-radius: 12px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    Learn More About Shaun →
-                </button>
-            </div>
-            
-            <!-- Subscription/Unlock All Teaser -->
-            <div style="margin: 32px 0; text-align: center;">
-                <button style="background: linear-gradient(90deg, #32CD32 0%, #FFD700 100%); color: #fff; border: none; border-radius: 14px; padding: 18px 48px; font-size: 1.3em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 16px rgba(147,112,219,0.10);">🔓 Subscribe / Unlock All Features (Coming Soon)</button>
-                <p style="margin-top: 10px; color: #444; font-size: 1.05em;">Get unlimited access to all premium activities, creative tools, and rewards with a future subscription. Stay tuned for launch!</p>
-            </div>
-
-            <!-- In-App Purchase Info Section -->
-            <div style="margin: 32px 0; background: #e7ffe7; border: 2px solid #32CD32; border-radius: 16px; padding: 24px; text-align: center;">
-                <h3 style="color: #388e3c; margin-bottom: 10px; font-size: 1.2em;">🛒 In-App Purchases (Coming Soon)</h3>
-                <p style="color: #333; font-size: 1.05em;">Soon you’ll be able to buy special activity packs, art tools, and more—right inside the app! All purchases will be safe, secure, and family-friendly.</p>
-            </div>
-            <!-- Interactive Movie-Style Trailer -->
-            <div id="trailer-section" style="margin: 36px 0; text-align: center;">
-                <h3 style="color: #764ba2; font-size: 1.4em; margin-bottom: 10px;">🎬 Interactive Movie Trailer: What’s Coming Soon!</h3>
-                <button id="playTrailerBtn" style="background: linear-gradient(90deg, #FFD700 0%, #FF69B4 100%); color: #fff; border: none; border-radius: 12px; padding: 14px 36px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(147,112,219,0.10);">▶️ Play Trailer</button>
-                <div id="trailerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,16,60,0.92); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
-                    <div style="max-width: 90vw; max-height: 70vh; margin: 40px auto; background: #222; border-radius: 18px; box-shadow: 0 8px 32px rgba(147,112,219,0.18); padding: 24px; position: relative; text-align: center;">
-                        <button id="closeTrailerBtn" style="position:absolute; top:12px; right:18px; background:none; border:none; color:#fff; font-size:2em; cursor:pointer;">✖️</button>
-                        <!-- Placeholder video (replace src with your own trailer later) -->
-                        <video id="trailerVideo" width="480" height="270" controls style="border-radius: 12px; background: #000; max-width: 100%;">
-                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div id="trailerFeatures" style="margin-top: 24px; color: #FFD700; font-size: 1.2em; font-family: 'Poppins', sans-serif;">
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 1s forwards;">🌟 New Premium Activities</div>
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 2s forwards;">🎤 Music Video Maker</div>
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 3s forwards;">🦄 3D Flying Unicorns</div>
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 4s forwards;">🧩 Brain Games & Challenges</div>
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 5s forwards;">🏆 Achievements & Rewards</div>
-                            <div class="trailer-feature" style="margin-bottom: 10px; animation: trailerFadeIn 6s forwards;">👨‍👩‍👧‍👦 Family & School Accounts</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <style>
-                @keyframes trailerFadeIn {
-                    from { opacity: 0; transform: translateY(30px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            </style>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var playBtn = document.getElementById('playTrailerBtn');
-                    var modal = document.getElementById('trailerModal');
-                    var closeBtn = document.getElementById('closeTrailerBtn');
-                    var video = document.getElementById('trailerVideo');
-                    if(playBtn && modal && closeBtn && video) {
-                        playBtn.onclick = function() {
-                            modal.style.display = 'flex';
-                            video.currentTime = 0;
                             video.play();
                         };
-                        closeBtn.onclick = function() {
-                            modal.style.display = 'none';
-                            video.pause();
-                        };
-                    }
-                });
-            </script>
-            <!-- Donation Button -->
-            <div style="margin: 24px 0; text-align: center;">
-                <a href="https://www.paypal.com/donate/?hosted_button_id=&business=millershaun2007@gmail.com&item_name=Support+Hip+Hop+Happening+Kids+App&currency_code=AUD" target="_blank" style="display: inline-block; background: linear-gradient(90deg, #FFD700 0%, #FF69B4 50%, #32CD32 100%); color: #fff; padding: 18px 48px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 1.4em; box-shadow: 0 8px 32px rgba(147,112,219,0.18), 0 3px 10px rgba(0,112,186,0.18); border: 3px solid #fff; transition: transform 0.2s;">💖 Support This App (Donate)</a>
+            <!-- Redesigned About Me Section - Standout Banner -->
+            <div style="margin: 48px auto; background: linear-gradient(135deg, #764ba2 0%, #FFD700 100%); border-radius: 32px; padding: 48px 32px; max-width: 700px; box-shadow: 0 12px 36px rgba(147,112,219,0.35); text-align: center; border: 4px solid #fff;">
+                <h2 style="color: #fff; font-size: 2.2em; margin-bottom: 24px; letter-spacing: 1px;">👤 Meet Shaun - Creator of This App!</h2>
+                <img src="Shaun Image for App.png" alt="Shaun - App Creator" style="width: 200px; height: 200px; border-radius: 50%; border: 6px solid #FFD700; box-shadow: 0 8px 32px rgba(0,0,0,0.25); margin-bottom: 28px; object-fit: cover;">
+                <h3 style="color: #FFD700; font-size: 1.6em; margin-bottom: 18px;">Hi, I'm Shaun! 👋</h3>
+                <p style="font-size: 1.25em; color: #fff; max-width: 600px; margin: 0 auto 30px; line-height: 1.7; font-weight: 500;">
+                    I created this magical learning app for all children, especially those who learn differently. My mission is to make learning fun, accessible, and inclusive for every child. Neurodiversity is our superpower!
+                </p>
+                <div style="background: linear-gradient(135deg, #e3f7ff 0%, #f3eaff 100%); border-radius: 20px; padding: 30px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 16px rgba(147,112,219,0.1);">
+                    <h4 style="color: #3498DB; margin-bottom: 15px;">🎯 My Mission</h4>
+                    <p style="color: #555; line-height: 1.6; font-size: 1.1em;">
+                        To create educational tools that celebrate neurodiversity and make learning an adventure for every child. Whether you're creating unicorn art, climbing word mountains, or exploring math mysteries—have fun!
+                    </p>
+                </div>
             </div>
-
             <!-- Premium Features Teaser -->
             <div style="margin: 32px 0; background: #fffbe7; border: 2px dashed #FFD700; border-radius: 16px; padding: 24px; text-align: center;">
                 <h3 style="color: #D2691E; margin-bottom: 10px; font-size: 1.3em;">✨ Coming Soon: Premium Features!</h3>
@@ -251,6 +177,7 @@
             <div id="mountain-game-container"></div>
         </section>
 
+            <!-- ...existing code... -->
         <!-- Designer Section -->
         <section id="designer" class="content-section">
             <h2>Design Your Own Creatures</h2>
