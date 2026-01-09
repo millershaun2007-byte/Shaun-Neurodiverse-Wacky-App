@@ -1,0 +1,245 @@
+/* Parent Resources Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    color: #764ba2;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    display: inline-block;
+    background: linear-gradient(135deg, #9370DB, #FFD700);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(147, 112, 219, 0.3);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(147, 112, 219, 0.4);
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.resource-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.intro-box {
+    background: linear-gradient(135deg, #e3f7ff 0%, #f3eaff 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-left: 6px solid #764ba2;
+}
+
+.intro-box h2 {
+    color: #764ba2;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.intro-box p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.resource-article {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.resource-article h3 {
+    color: #764ba2;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.resource-article h4 {
+    color: #0288D1;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.resource-article p {
+    color: #555;
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.resource-article ul,
+.resource-article ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.resource-article li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.resource-article a {
+    color: #764ba2;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.resource-article a:hover {
+    color: #9370DB;
+}
+
+.activity-card {
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card button {
+    transition: all 0.3s ease;
+}
+
+.activity-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.final-note {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.final-note h4 {
+    color: #764ba2;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.final-note p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .resource-content {
+        padding: 20px;
+    }
+
+    .intro-box,
+    .resource-article {
+        padding: 20px;
+    }
+
+    .resource-article h3 {
+        font-size: 1.4em;
+    }
+
+    .activity-card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    .resource-article h3 {
+        font-size: 1.2em;
+    }
+
+    .resource-article h4 {
+        font-size: 1.1em;
+    }
+
+    .activity-card h4 {
+        font-size: 1.1em;
+    }
+
+    .activity-card button {
+        font-size: 0.95em;
+        padding: 8px 16px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    header {
+        background: white;
+        border-bottom: 2px solid #764ba2;
+    }
+
+    button {
+        display: none;
+    }
+
+    .activity-card {
+        page-break-inside: avoid;
+    }
+}
