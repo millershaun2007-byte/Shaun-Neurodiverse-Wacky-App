@@ -506,3 +506,246 @@ footer {
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
 }
+
+/* Navigation Styles */
+.main-nav {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+.main-nav h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #333;
+    border: 2px solid white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Content Sections */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeInSection 0.5s ease;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Calm Corner Specific Styles */
+#calm-corner {
+    background: linear-gradient(135deg, #f5f5ff 0%, #e6e6fa 100%);
+    transition: background 2s ease;
+}
+
+#calm-corner h2 {
+    text-align: center;
+    color: #764ba2;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#calm-corner h3 {
+    color: #764ba2;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* Breathing Circle Animation */
+#breathing-circle {
+    transition: all 0.3s ease;
+}
+
+/* Color Buttons */
+.color-btn {
+    transition: all 0.3s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn:active {
+    transform: scale(0.95);
+}
+
+/* Sound Buttons */
+.sound-btn {
+    transition: all 0.3s ease;
+}
+
+.sound-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Feeling Buttons */
+.feeling-btn {
+    transition: all 0.3s ease;
+}
+
+.feeling-btn:hover {
+    transform: scale(1.1);
+    background: rgba(118, 75, 162, 0.1);
+}
+
+/* Parent Activities Specific Styles */
+#parent-activities {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffe6f0 100%);
+}
+
+#parent-activities h2 {
+    text-align: center;
+    color: #ff9800;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.activity-category {
+    transition: all 0.3s ease;
+}
+
+.activity-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.activity-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.activity-category li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.activity-category li:last-child {
+    border-bottom: none;
+}
+
+/* Sensory Card Styles */
+.sensory-card {
+    transition: all 0.3s ease;
+}
+
+.sensory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    footer,
+    .nav-btn,
+    button {
+        display: none !important;
+    }
+    
+    .content-section {
+        display: block !important;
+        page-break-after: always;
+    }
+    
+    body {
+        background: white !important;
+    }
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .main-nav h1 {
+        font-size: 1.5em;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .content-section {
+        padding: 20px;
+    }
+    
+    #calm-corner h2,
+    #parent-activities h2 {
+        font-size: 1.8em;
+    }
+    
+    .activity-category {
+        padding: 20px !important;
+    }
+}
+
+/* Accessibility - Reduce Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    #breathing-circle {
+        animation: none !important;
+    }
+}
