@@ -29,7 +29,7 @@ Thank you for helping us test this educational app designed for kids, with speci
 
 ### 📧 We Need Your Feedback!
 
-Please email: **feedback@kidslearningapp.com** (replace with your actual email)
+Please email: **millershaun2007@gmail.com**
 
 **Tell us:**
 - What works well?
@@ -106,7 +106,7 @@ This is not COPPA compliant yet - we do not collect any data from children. All 
 
 ### Questions?
 
-Email: feedback@kidslearningapp.com
+Email: millershaun2007@gmail.com
 
 ---
 
