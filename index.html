@@ -30,6 +30,8 @@
             <button class="nav-btn" data-section="writing" aria-label="Creative Writing" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">✍️ Creative Writing</button>
             <button class="nav-btn" data-section="art" aria-label="Art Studio" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">🖌️ Art Studio</button>
             <button class="nav-btn" data-section="mountain-climb" aria-label="Mountain Climb Word Game" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">⛰️ Mountain Climb</button>
+            <button class="nav-btn" data-section="calm-corner" aria-label="Calm Corner" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">🧘 Calm Corner</button>
+            <button class="nav-btn" data-section="parent-activities" aria-label="Parent Activities" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">👨‍👩‍👧 Parent Activities</button>
             <a href="drama.html" class="nav-btn" aria-label="Interactive Drama" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">🎭 Interactive Drama</a>
             <a href="collaborative-story.html" class="nav-btn" aria-label="Collaborative Story" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">✍️ Collaborative Story</a>
             <a href="resources.html" class="nav-btn" aria-label="Helpful Resources" tabindex="0" style="font-size:1.2em; min-width:120px; min-height:48px;">🌐 Helpful Resources</a>
@@ -270,8 +272,196 @@
 
         <!-- Calm Corner Section -->
         <section id="calm-corner" class="content-section">
-            <h2>Calm Corner</h2>
-            <div id="calm-corner-app"></div>
+            <h2>🧘 Calm Corner 💜</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #555; margin-bottom: 30px;">Take a deep breath and relax. This is your peaceful space.</p>
+            
+            <!-- Breathing Animation -->
+            <div id="breathing-container" style="text-align: center; margin: 40px auto;">
+                <div id="breathing-circle" style="width: 200px; height: 200px; margin: 0 auto 30px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);"></div>
+                <div id="breathing-text" style="font-size: 1.8em; font-weight: bold; color: #667eea; margin-bottom: 20px;">Click Start to Begin</div>
+                <div style="margin: 20px 0;">
+                    <button id="start-breathing-btn" class="calm-btn" style="margin: 10px;">▶️ Start Breathing</button>
+                    <button id="pause-breathing-btn" class="calm-btn" style="margin: 10px; display: none;">⏸️ Pause</button>
+                </div>
+                <div style="margin-top: 20px;">
+                    <label style="font-size: 1.1em; color: #555;">Breathing Pattern: </label>
+                    <select id="breathing-pattern" style="font-size: 1.1em; padding: 8px; border-radius: 8px; border: 2px solid #667eea;">
+                        <option value="444">4-4-4 (Breathe In, Hold, Breathe Out)</option>
+                        <option value="478">4-7-8 (Breathe In, Hold, Breathe Out)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Calming Colors -->
+            <div id="calming-colors" style="margin: 40px auto; text-align: center;">
+                <h3 style="color: #764ba2;">✨ Calming Colors</h3>
+                <p style="color: #555;">Pick a color that makes you feel calm</p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+                    <button class="color-btn" data-color="lavender" style="background: linear-gradient(135deg, #E6E6FA, #DDA0DD); width: 80px; height: 80px; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">💜</button>
+                    <button class="color-btn" data-color="skyblue" style="background: linear-gradient(135deg, #87CEEB, #4682B4); width: 80px; height: 80px; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">💙</button>
+                    <button class="color-btn" data-color="softgreen" style="background: linear-gradient(135deg, #98FB98, #3CB371); width: 80px; height: 80px; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">💚</button>
+                    <button class="color-btn" data-color="peachy" style="background: linear-gradient(135deg, #FFDAB9, #FFB6C1); width: 80px; height: 80px; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">🧡</button>
+                </div>
+            </div>
+
+            <!-- Soothing Sounds -->
+            <div id="soothing-sounds" style="margin: 40px auto; text-align: center; max-width: 600px;">
+                <h3 style="color: #764ba2;">🎵 Soothing Sounds</h3>
+                <div style="margin: 20px 0;">
+                    <button class="sound-btn" data-sound="ocean" style="margin: 10px; padding: 15px 25px; font-size: 1.1em; border: none; border-radius: 12px; background: linear-gradient(135deg, #00d4ff, #0099cc); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">🌊 Ocean Waves</button>
+                    <button class="sound-btn" data-sound="rain" style="margin: 10px; padding: 15px 25px; font-size: 1.1em; border: none; border-radius: 12px; background: linear-gradient(135deg, #6c757d, #495057); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">🌧️ Rain</button>
+                    <button class="sound-btn" data-sound="music" style="margin: 10px; padding: 15px 25px; font-size: 1.1em; border: none; border-radius: 12px; background: linear-gradient(135deg, #ffd700, #ffaa00); color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">🎶 Gentle Music</button>
+                    <button id="stop-sound-btn" style="margin: 10px; padding: 15px 25px; font-size: 1.1em; border: none; border-radius: 12px; background: #dc3545; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">⏹️ Stop Sound</button>
+                </div>
+                <div style="margin-top: 20px;">
+                    <label style="font-size: 1.1em; color: #555;">Volume: </label>
+                    <input type="range" id="sound-volume" min="0" max="100" value="50" style="width: 200px; vertical-align: middle;">
+                    <span id="volume-display" style="margin-left: 10px; font-size: 1.1em; color: #555;">50%</span>
+                </div>
+            </div>
+
+            <!-- Mindfulness Prompts -->
+            <div id="mindfulness-prompts" style="margin: 40px auto; text-align: center; max-width: 600px;">
+                <h3 style="color: #764ba2;">🌟 Mindfulness Activities</h3>
+                <div id="prompt-card" style="background: linear-gradient(135deg, #ffeef8, #e6e6fa); padding: 30px; border-radius: 20px; margin: 20px 0; box-shadow: 0 8px 24px rgba(118, 75, 162, 0.2); min-height: 150px; display: flex; flex-direction: column; justify-content: center;">
+                    <p id="prompt-text" style="font-size: 1.5em; color: #764ba2; font-weight: 600;">Take 3 deep breaths 🌬️</p>
+                </div>
+                <button id="next-prompt-btn" class="calm-btn">Next Activity ➡️</button>
+            </div>
+
+            <!-- Feelings Check-In -->
+            <div id="feelings-checkin" style="margin: 40px auto; text-align: center; max-width: 700px;">
+                <h3 style="color: #764ba2;">💭 How Are You Feeling?</h3>
+                <p style="color: #555; margin-bottom: 20px;">Pick the feeling that matches how you feel right now</p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                    <button class="feeling-btn" data-feeling="happy" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">😊</button>
+                    <button class="feeling-btn" data-feeling="sad" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">😢</button>
+                    <button class="feeling-btn" data-feeling="angry" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">😠</button>
+                    <button class="feeling-btn" data-feeling="worried" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">😰</button>
+                    <button class="feeling-btn" data-feeling="excited" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">🤩</button>
+                    <button class="feeling-btn" data-feeling="calm" style="font-size: 4em; background: none; border: 3px solid transparent; border-radius: 20px; padding: 15px; cursor: pointer; transition: all 0.3s;">😌</button>
+                </div>
+                <div id="feeling-response" style="margin-top: 20px; font-size: 1.3em; color: #764ba2; min-height: 40px;"></div>
+            </div>
+
+            <!-- Sensory Activities -->
+            <div id="sensory-activities" style="margin: 40px auto; max-width: 800px;">
+                <h3 style="text-align: center; color: #764ba2;">🎨 Sensory Activities to Try</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                    <div class="sensory-card" style="background: linear-gradient(135deg, #fff5f5, #ffe6e6); padding: 20px; border-radius: 15px; border-left: 5px solid #ff6b6b; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h4 style="color: #ff6b6b; margin-bottom: 10px;">👀 Visual</h4>
+                        <p style="color: #555;">"Look at something colorful around you. What's your favorite color you can see?"</p>
+                    </div>
+                    <div class="sensory-card" style="background: linear-gradient(135deg, #f5f5ff, #e6e6ff); padding: 20px; border-radius: 15px; border-left: 5px solid #667eea; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h4 style="color: #667eea; margin-bottom: 10px;">👐 Touch</h4>
+                        <p style="color: #555;">"Hold something soft like a pillow or stuffed animal. How does it feel?"</p>
+                    </div>
+                    <div class="sensory-card" style="background: linear-gradient(135deg, #fffef5, #fffbe6); padding: 20px; border-radius: 15px; border-left: 5px solid #feca57; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h4 style="color: #d4a900; margin-bottom: 10px;">👂 Sound</h4>
+                        <p style="color: #555;">"Listen to calm music or nature sounds. Try closing your eyes while you listen."</p>
+                    </div>
+                    <div class="sensory-card" style="background: linear-gradient(135deg, #f5fff5, #e6ffe6); padding: 20px; border-radius: 15px; border-left: 5px solid #1dd1a1; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <h4 style="color: #1dd1a1; margin-bottom: 10px;">🤸 Movement</h4>
+                        <p style="color: #555;">"Do gentle stretches. Reach up high like a tree, then bend down like you're touching your toes."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parent Activities Section -->
+        <section id="parent-activities" class="content-section">
+            <h2>👨‍👩‍👧 Parent Activities 🏃🎨</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #555; margin-bottom: 30px;">Fun activities to do with your kids around the house!</p>
+            
+            <!-- Movement Breaks -->
+            <div class="activity-category" style="margin: 40px auto; max-width: 900px; background: linear-gradient(135deg, #fff5e6, #ffe6cc); padding: 30px; border-radius: 20px; border-left: 8px solid #ff9800; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <h3 style="color: #ff9800; margin-bottom: 20px;">🏃 Movement Breaks</h3>
+                <ul style="font-size: 1.1em; line-height: 2; color: #555;">
+                    <li><strong>Star Jumps Challenge:</strong> "Can you do 10 star jumps? 20?"</li>
+                    <li><strong>Dance Party:</strong> "Put on favorite song and dance for 3 minutes!"</li>
+                    <li><strong>Animal Walks:</strong> "Walk like a bear, hop like a bunny, slither like a snake"</li>
+                    <li><strong>Obstacle Course:</strong> "Use pillows, toys, and furniture to create a fun course"</li>
+                    <li><strong>Yoga Poses:</strong> "Try tree pose, downward dog, or make up your own!"</li>
+                    <li><strong>Freeze Dance:</strong> "Dance until the music stops, then FREEZE!"</li>
+                </ul>
+                <div style="background: #fff; padding: 15px; border-radius: 10px; margin-top: 20px; border: 2px solid #ff9800;">
+                    <p style="color: #764ba2; font-weight: bold; margin-bottom: 10px;">⭐ Sensory-Friendly Tips:</p>
+                    <ul style="color: #555; font-size: 1em; line-height: 1.8;">
+                        <li>⏱️ Use timers for transitions</li>
+                        <li>🎵 Add music or quiet time options</li>
+                        <li>✅ Celebrate effort, not just completion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Creative Crafts -->
+            <div class="activity-category" style="margin: 40px auto; max-width: 900px; background: linear-gradient(135deg, #ffe6f5, #ffd6e8); padding: 30px; border-radius: 20px; border-left: 8px solid #e91e63; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <h3 style="color: #e91e63; margin-bottom: 20px;">🎨 Creative Crafts</h3>
+                <ul style="font-size: 1.1em; line-height: 2; color: #555;">
+                    <li><strong>DIY Unicorn Horn:</strong> "Use paper cone, glitter, and elastic band"</li>
+                    <li><strong>Dinosaur Footprints:</strong> "Trace feet on paper, add claws, make a trail!"</li>
+                    <li><strong>Rainbow Painting:</strong> "Use cotton swabs and paint to make rainbows"</li>
+                    <li><strong>Paper Plate Masks:</strong> "Create creature faces with plates, markers, and decorations"</li>
+                    <li><strong>Nature Collage:</strong> "Collect leaves, flowers, sticks - glue on paper"</li>
+                    <li><strong>Sock Puppets:</strong> "Old socks + buttons + felt = new puppet friends!"</li>
+                </ul>
+                <div style="background: #fff; padding: 15px; border-radius: 10px; margin-top: 20px; border: 2px solid #e91e63;">
+                    <p style="color: #764ba2; font-weight: bold; margin-bottom: 10px;">⭐ Sensory-Friendly Tips:</p>
+                    <ul style="color: #555; font-size: 1em; line-height: 1.8;">
+                        <li>⭐ Break into smaller steps</li>
+                        <li>👐 Offer tactile alternatives (no glue/paint? Use stickers!)</li>
+                        <li>✅ Celebrate effort, not just completion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Math Around the House -->
+            <div class="activity-category" style="margin: 40px auto; max-width: 900px; background: linear-gradient(135deg, #e6f5ff, #cce7ff); padding: 30px; border-radius: 20px; border-left: 8px solid #2196f3; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <h3 style="color: #2196f3; margin-bottom: 20px;">🔢 Math Around the House</h3>
+                <ul style="font-size: 1.1em; line-height: 2; color: #555;">
+                    <li><strong>Counting Treasure Hunt:</strong> "Find 5 red things, 3 round things, 10 small things"</li>
+                    <li><strong>Pattern Making:</strong> "Use blocks, toys, or snacks to create patterns: red-blue-red-blue"</li>
+                    <li><strong>Measuring Kitchen Items:</strong> "Which is taller? Heavier? Longer?"</li>
+                    <li><strong>Sorting Games:</strong> "Sort toys by color, size, or type"</li>
+                    <li><strong>Shape Hunt:</strong> "Find circles, squares, triangles around your house"</li>
+                    <li><strong>Cooking Math:</strong> "Measuring cups while baking = math practice!"</li>
+                </ul>
+                <div style="background: #fff; padding: 15px; border-radius: 10px; margin-top: 20px; border: 2px solid #2196f3;">
+                    <p style="color: #764ba2; font-weight: bold; margin-bottom: 10px;">⭐ Sensory-Friendly Tips:</p>
+                    <ul style="color: #555; font-size: 1em; line-height: 1.8;">
+                        <li>⭐ Break into smaller steps</li>
+                        <li>⏱️ Use timers for transitions</li>
+                        <li>✅ Celebrate effort, not just completion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Literacy Fun -->
+            <div class="activity-category" style="margin: 40px auto; max-width: 900px; background: linear-gradient(135deg, #f5e6ff, #e8ccff); padding: 30px; border-radius: 20px; border-left: 8px solid #9c27b0; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <h3 style="color: #9c27b0; margin-bottom: 20px;">📚 Literacy Fun</h3>
+                <ul style="font-size: 1.1em; line-height: 2; color: #555;">
+                    <li><strong>Story Time Adventures:</strong> "Read together, then act out the story!"</li>
+                    <li><strong>Letter Scavenger Hunt:</strong> "Find items starting with each letter A-Z"</li>
+                    <li><strong>Rhyming Games:</strong> "Cat-hat-bat! What else rhymes?"</li>
+                    <li><strong>Create Your Own Book:</strong> "Draw pictures, tell a story together"</li>
+                    <li><strong>Word Building with Toys:</strong> "Use blocks or letters to spell words"</li>
+                    <li><strong>Silly Sentence Game:</strong> "Take turns adding one word to make a funny story"</li>
+                </ul>
+                <div style="background: #fff; padding: 15px; border-radius: 10px; margin-top: 20px; border: 2px solid #9c27b0;">
+                    <p style="color: #764ba2; font-weight: bold; margin-bottom: 10px;">⭐ Sensory-Friendly Tips:</p>
+                    <ul style="color: #555; font-size: 1em; line-height: 1.8;">
+                        <li>⭐ Break into smaller steps</li>
+                        <li>🎵 Add music or quiet time options</li>
+                        <li>👐 Offer tactile alternatives</li>
+                        <li>✅ Celebrate effort, not just completion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Print Button -->
+            <div style="text-align: center; margin: 40px 0;">
+                <button onclick="window.print()" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 15px 40px; font-size: 1.2em; border-radius: 15px; cursor: pointer; box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4); font-weight: bold;">🖨️ Print This List</button>
+            </div>
         </section>
     </main>
 
